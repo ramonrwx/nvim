@@ -26,8 +26,6 @@
 
 (set vim.opt.showmode true)
 (set vim.opt.cursorline false)
-(set vim.opt.background :dark)
-(set vim.opt.termguicolors true)
 
 (set vim.opt.splitbelow true)
 (set vim.opt.splitright true)
