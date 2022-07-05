@@ -16,6 +16,8 @@
 (nmap "<Leader>k" ":wincmd k<CR>")
 (nmap "<Leader>l" ":wincmd l<CR>")
 
+(nmap "<C-n>" ":NvimTreeToggle<CR>")
+
 (nmap "J" ":m .+1<CR>==")
 (nmap "K" ":m .-2<CR>==")
 
