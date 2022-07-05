@@ -2,4 +2,5 @@
   {require [options
             mappings
             plugins.autopairs
-            plugins.tree]})
+            plugins.tree
+            plugins.treesitter]})
