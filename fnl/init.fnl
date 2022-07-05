@@ -1,3 +1,4 @@
 (module init
   {require [options
-            mappings]})
+            mappings
+            plugins.autopairs]})
