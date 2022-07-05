@@ -1,2 +1,3 @@
 (module init
-  {require [options]})
+  {require [options
+            mappings]})
