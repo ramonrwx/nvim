@@ -1,0 +1,16 @@
+ci:
+  skip: [stylua, luacheck]
+
+exclude: ^lazy-lock.json
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+  - repo: https://github.com/rwxcorp/pre-commit-lua.git
+    rev: v1.0.0
+    hooks:
+      - id: stylua
+      - id: luacheck
