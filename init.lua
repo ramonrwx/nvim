@@ -37,6 +37,12 @@ vim.keymap.set('n', '<leader>k', '<C-w><C-k>', { desc = 'Move focus to the upper
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move line down', noremap = true, silent = true })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move line up', noremap = true, silent = true })
 
+vim.keymap.set('n', 'gt', ':bnext<CR>', { desc = 'Go to next buffer', noremap = true, silent = true })
+vim.keymap.set('n', 'gT', ':bprevious<CR>', { desc = 'Go to previous buffer', noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Fast saving', noremap = true, silent = true })
+vim.keymap.set('n', '<leader>q', ':qa!<CR>', { desc = 'Close all windows and exit', noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('hlyank', { clear = true }),
