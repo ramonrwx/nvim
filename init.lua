@@ -68,7 +68,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   'tpope/vim-sleuth',
-  { 'numToStr/Comment.nvim', opts = {} },
+  'numToStr/Comment.nvim',
   {
     'tiagovla/tokyodark.nvim',
     lazy = false,
@@ -92,6 +92,7 @@ require('lazy').setup {
     config = function()
       require('mini.ai').setup { n_lines = 500, silent = true }
       require('mini.surround').setup { silent = true }
+      require('mini.pairs').setup { silent = true }
 
       local statusline = require 'mini.statusline'
       statusline.setup()
