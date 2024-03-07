@@ -70,12 +70,15 @@ require('lazy').setup {
   'tpope/vim-sleuth',
   { 'numToStr/Comment.nvim', opts = {} },
   {
-    'folke/tokyonight.nvim',
+    'tiagovla/tokyodark.nvim',
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'tokyonight-night'
+    config = function(_, opts)
+      require('tokyodark').setup(opts)
+      require('tokyodark').colorscheme()
       vim.cmd.hi 'Comment gui=none'
+      vim.cmd.hi 'Keyword gui=none'
+      vim.cmd.hi 'Identifier gui=none'
     end,
   },
   {
