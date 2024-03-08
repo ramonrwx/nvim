@@ -43,6 +43,9 @@ vim.keymap.set('n', 'gT', ':bprevious<CR>', { desc = 'Go to previous buffer', no
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Fast saving', noremap = true, silent = true })
 vim.keymap.set('n', '<leader>q', ':qa!<CR>', { desc = 'Close all windows and exit', noremap = true, silent = true })
 
+vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
+vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('hlyank', { clear = true }),
@@ -105,6 +108,7 @@ require('lazy').setup {
       require('mini.ai').setup { n_lines = 500, silent = true }
       require('mini.surround').setup { silent = true }
       require('mini.pairs').setup { silent = true }
+      require('mini.completion').setup()
 
       local statusline = require 'mini.statusline'
       statusline.setup()
