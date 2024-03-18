@@ -84,15 +84,20 @@ require('lazy').setup {
     },
   },
   {
-    'tiagovla/tokyodark.nvim',
+    'zootedb0t/citruszest.nvim',
     lazy = false,
     priority = 1000,
-    config = function(_, opts)
-      require('tokyodark').setup(opts)
-      require('tokyodark').colorscheme()
-      vim.cmd.hi 'Comment gui=none'
-      vim.cmd.hi 'Keyword gui=none'
-      vim.cmd.hi 'Identifier gui=none'
+    config = function()
+      require('citruszest').setup {
+        option = {
+          italic = false,
+        },
+      }
+
+      vim.cmd.colorscheme 'citruszest'
+      -- vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Keyword gui=none'
+      -- vim.cmd.hi 'Identifier gui=none'
     end,
   },
   {
