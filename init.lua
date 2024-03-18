@@ -71,7 +71,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   'tpope/vim-sleuth',
-  'numToStr/Comment.nvim',
   {
     'lewis6991/gitsigns.nvim',
     opts = {
