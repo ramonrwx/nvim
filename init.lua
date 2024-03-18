@@ -21,8 +21,8 @@ vim.opt.lazyredraw = true
 -- Disable nvim intro
 vim.opt.shortmess:append 'sI'
 
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 vim.opt.scrolloff = 10
 
