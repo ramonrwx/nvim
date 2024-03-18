@@ -46,6 +46,8 @@ vim.keymap.set('n', '<leader>q', ':qa!<CR>', { desc = 'Close all windows and exi
 vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
 vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
 
+vim.keymap.set('n', '<c-n>', ':lua MiniFiles.open()<CR>', { desc = 'Navigate and manipulate file system' })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('hlyank', { clear = true }),
@@ -113,6 +115,12 @@ require('lazy').setup {
       require('mini.surround').setup { silent = true }
       require('mini.pairs').setup { silent = true }
       require('mini.completion').setup()
+      require('mini.files').setup()
+      require('mini.comment').setup {
+        options = {
+          ignore_blank_line = true,
+        },
+      }
 
       local statusline = require 'mini.statusline'
       statusline.setup()
