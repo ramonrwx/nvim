@@ -47,6 +47,7 @@ vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = tr
 vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
 
 vim.keymap.set('n', '<c-n>', ':lua MiniFiles.open()<CR>', { desc = 'Navigate and manipulate file system' })
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open LazyGit' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -73,6 +74,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   'tpope/vim-sleuth',
+  'kdheepak/lazygit.nvim',
   {
     'lewis6991/gitsigns.nvim',
     opts = {
