@@ -133,6 +133,20 @@ require('lazy').setup {
     end,
   },
   {
+    'stevearc/conform.nvim',
+    config = function()
+      require('conform').setup {
+        format_on_save = {
+          timeout_ms = 500,
+        },
+        formatters_by_ft = {
+          lua = { 'stylua' },
+          go = { 'goimports' },
+        },
+      }
+    end,
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     event = { 'BufReadPre', 'BufNewFile' },
     build = ':TSUpdate',
